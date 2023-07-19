@@ -66,7 +66,6 @@ export type PlasmicPartnership__OverridesType = {
   navBar?: p.Flex<typeof NavBar>;
   pageBanner?: p.Flex<"div">;
   h1?: p.Flex<"h1">;
-  img?: p.Flex<typeof p.PlasmicImg>;
   mainSection?: p.Flex<"div">;
   embedHtml?: p.Flex<typeof Embed>;
   footerTop?: p.Flex<"div">;
@@ -193,14 +192,24 @@ function PlasmicPartnership__RenderFunc(props: {
             data-plasmic-override={overrides.navBar}
             className={classNames("__wab_instance", sty.navBar)}
           />
-
-          <div className={classNames(projectcss.all, sty.freeBox__ulvCj)} />
         </div>
         <div
           data-plasmic-name={"pageBanner"}
           data-plasmic-override={overrides.pageBanner}
           className={classNames(projectcss.all, sty.pageBanner)}
         >
+          <h1
+            data-plasmic-name={"h1"}
+            data-plasmic-override={overrides.h1}
+            className={classNames(
+              projectcss.all,
+              projectcss.h1,
+              projectcss.__wab_text,
+              sty.h1
+            )}
+          >
+            {"Contact Us"}
+          </h1>
           <div className={classNames(projectcss.all, sty.freeBox__tdLwu)}>
             <p.Stack
               as={"div"}
@@ -208,73 +217,17 @@ function PlasmicPartnership__RenderFunc(props: {
               className={classNames(projectcss.all, sty.columns___4HWsn)}
             >
               <div className={classNames(projectcss.all, sty.column__vcXuH)}>
-                <p.Stack
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__dm1Th)}
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__ltBsW
+                  )}
                 >
-                  <h1
-                    data-plasmic-name={"h1"}
-                    data-plasmic-override={overrides.h1}
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h1,
-                      projectcss.__wab_text,
-                      sty.h1
-                    )}
-                  >
-                    {"Contact Us"}
-                  </h1>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ltBsW
-                    )}
-                  >
-                    {
-                      "By becoming our importer, you can source high-quality chips from different countries around the world, including Indonesia, where traditional chips are a popular snack. By importing these unique and exotic chips, you can offer your customers a wide variety of flavors and textures that they might not be able to find elsewhere.\n\nTo start your own exotic chips import business, you'll need to contact us as potential suppliers. It's important to find reliable suppliers who can provide you with high-quality chips at a reasonable price. You'll find Chipsia can be Reliable Exotic Chips Business Partners"
-                    }
-                  </div>
-                </p.Stack>
-              </div>
-              <div className={classNames(projectcss.all, sty.column__fOs0N)}>
-                <p.PlasmicImg
-                  data-plasmic-name={"img"}
-                  data-plasmic-override={overrides.img}
-                  alt={""}
-                  className={classNames(sty.img)}
-                  displayHeight={"auto" as const}
-                  displayMaxHeight={"none" as const}
-                  displayMaxWidth={
-                    hasVariant(globalVariants, "screen", "mobileOnly")
-                      ? ("100%" as const)
-                      : ("100%" as const)
+                  {
+                    "By becoming our importer, you can source high-quality chips from different countries around the world, including Indonesia, where traditional chips are a popular snack. By importing these unique and exotic chips, you can offer your customers a wide variety of flavors and textures that they might not be able to find elsewhere.\n\nTo start your own exotic chips import business, you'll need to contact us as potential suppliers. It's important to find reliable suppliers who can provide you with high-quality chips at a reasonable price. You'll find Chipsia can be Reliable Exotic Chips Business Partners"
                   }
-                  displayMinHeight={"0" as const}
-                  displayMinWidth={"0" as const}
-                  displayWidth={"auto" as const}
-                  loading={
-                    hasVariant(globalVariants, "screen", "mobileOnly")
-                      ? ("lazy" as const)
-                      : ("lazy" as const)
-                  }
-                  src={
-                    hasVariant(globalVariants, "screen", "mobileOnly")
-                      ? {
-                          src: "/plasmic/chipsia/images/image7.jpg",
-                          fullWidth: 1920,
-                          fullHeight: 1280,
-                          aspectRatio: undefined
-                        }
-                      : {
-                          src: "/plasmic/chipsia/images/empingTraditionalMakingProcessjpg.jpg",
-                          fullWidth: 1024,
-                          fullHeight: 768,
-                          aspectRatio: undefined
-                        }
-                  }
-                />
+                </div>
               </div>
             </p.Stack>
           </div>
@@ -445,7 +398,6 @@ const PlasmicDescendants = {
     "navBar",
     "pageBanner",
     "h1",
-    "img",
     "mainSection",
     "embedHtml",
     "footerTop",
@@ -456,9 +408,8 @@ const PlasmicDescendants = {
     "container2"
   ],
   navBar: ["navBar"],
-  pageBanner: ["pageBanner", "h1", "img"],
+  pageBanner: ["pageBanner", "h1"],
   h1: ["h1"],
-  img: ["img"],
   mainSection: ["mainSection", "embedHtml"],
   embedHtml: ["embedHtml"],
   footerTop: ["footerTop", "container", "svg", "h5"],
@@ -476,7 +427,6 @@ type NodeDefaultElementType = {
   navBar: typeof NavBar;
   pageBanner: "div";
   h1: "h1";
-  img: typeof p.PlasmicImg;
   mainSection: "div";
   embedHtml: typeof Embed;
   footerTop: "div";
@@ -550,7 +500,6 @@ export const PlasmicPartnership = Object.assign(
     navBar: makeNodeComponent("navBar"),
     pageBanner: makeNodeComponent("pageBanner"),
     h1: makeNodeComponent("h1"),
-    img: makeNodeComponent("img"),
     mainSection: makeNodeComponent("mainSection"),
     embedHtml: makeNodeComponent("embedHtml"),
     footerTop: makeNodeComponent("footerTop"),
